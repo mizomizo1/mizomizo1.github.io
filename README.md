@@ -158,3 +158,7 @@ hugo --gc --minify
 各ページの `title` と `description` から検索向けの情報を生成します。設定場所・表示例・記事の書き方・Google側で変わる点は [docs/seo.md](docs/seo.md) を参照してください。
 
 表記方針：ブログ全体の著者名は `mizomizo1`、実名のプロフィールはAboutに掲載します。サイト共通の著者設定は `languages.ja.toml`、実名の紹介は `content/about.md` で管理します。
+
+### PagesでJekyllビルドが失敗する場合
+
+Hugoの `Deploy Hugo site to Pages` が成功しているのに、別の `pages build and deployment` が `Build with Jekyll` で失敗する場合は、Pagesの公開元がブランチ方式になっています。**Settings → Pages → Build and deployment → Source → GitHub Actions** に設定してください。HugoのソースをJekyllで処理する設定や、リポジトリ直下の `.nojekyll` の追加で対処する必要はありません。
