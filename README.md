@@ -87,7 +87,7 @@ categories = ['技術']
 ここから本文を書きます。
 ```
 
-`<!--more-->` より前が一覧の要約になります。省略した場合は本文から自動生成されます。公開するときは `draft = false` にします。未来の日時の記事はその日時になるまでビルド対象になりません。日時を過ぎたら再ビルドが必要です。
+`<!--more-->` より前が一覧の要約になります（`description` がある記事はそちらを優先します）。省略した場合は本文から自動生成されます。公開するときは `draft = false` にします。未来の日時の記事はその日時になるまでビルド対象になりません。日時を過ぎたら再ビルドが必要です。
 
 画像を記事とまとめる場合は `content/posts/記事名/index.md` と同じフォルダーに画像を置き、`![説明](image.jpg)` で参照できます。共通の画像は `static/images/` に置き、`/images/ファイル名` で参照します。
 
@@ -129,10 +129,12 @@ hugo --gc --minify
 
 本文と見出しは **BIZ UDPゴシック（BIZ UDPGothic）** を使用します。`layouts/partials/extend-head.html` でGoogle Fontsの400・700ウェイトを読み込み、`assets/css/custom.css` の `--blog-font` でフォントを管理します。`display=swap` により読み込み中も代替フォントで表示します。外部フォントを取得できない場合は端末のフォントに切り替わります。コードブロックは等幅フォントを維持します。
 
-文章の読みやすさは `custom.css` の `--blog-text-leading`（本文行間1.2倍）、`--blog-text-tracking`（字間0）、`--blog-paragraph-gap`（段落間0.35em）、`--blog-reading-width`（本文の最大幅44rem）で調整できます。本文はPCで18px、スマートフォンで16pxです。見出し・箇条書き・コードにはそれぞれの間隔を設定しています。
+文章の読みやすさは `custom.css` の `--blog-text-leading`（本文行間1.3倍）、`--blog-text-tracking`（字間0）、`--blog-paragraph-gap`（段落間0.35em）、`--blog-reading-width`（本文の最大幅44rem）で調整できます。本文はPCで18px、スマートフォンで16pxです。見出し・箇条書き・コードにはそれぞれの間隔を設定しています。
 
 ## 画面の文言
 
 読者に必要な本文・日付・分類・操作名を優先します。技術構成や投稿方法はREADMEに記載し、画面上では繰り返しません。トップではサイト名の重複、記事では著者紹介・読了時間を省き、新着記事より先の記事がある場合だけ一覧への追加リンクを表示します。フッターのテーマ表記は `footer.showThemeAttribution` で非表示にしています。
 
 ヘッダーのブログ名 `mizomizo.log` は **Space Mono Bold（700）** を使用します。Google Fontsで読み込み、`custom.css` の `--blog-brand-font` とヘッダー用ルールで管理します。サイト名は `hugo.toml` と `languages.ja.toml` の `title` に設定しています。
+
+読者向けUIの判断と参照論文は [docs/ui-design.md](docs/ui-design.md) にまとめています。要約の行間は `--blog-summary-leading` で本文と別に管理します。

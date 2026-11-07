@@ -1,0 +1,17 @@
+{{ if and (eq .Section "posts") (.Params.showPagination | default site.Params.article.showPagination) }}
+  <nav aria-label="記事の移動">
+    <a class="blog-archive-link" href="{{ "posts/" | relLangURL }}">記事一覧に戻る</a>
+    {{ $older := .PrevInSection }}
+    {{ $newer := .NextInSection }}
+    {{ if .Params.invertPagination | default site.Params.article.invertPagination }}
+      {{ $older = .NextInSection }}
+      {{ $newer = .PrevInSection }}
+    {{ end }}
+    {{ if or $older $newer }}
+      <div class="blog-article-nav">
+        {{ with $older }}<a href="{{ .RelPermalink }}" rel="prev"><small>前の記事</small><strong>{{ .Title }}</strong></a>{{ end }}
+        {{ with $newer }}<a href="{{ .RelPermalink }}" rel="next"><small>次の記事</small><strong>{{ .Title }}</strong></a>{{ end }}
+      </div>
+    {{ end }}
+  </nav>
+{{ end }}
