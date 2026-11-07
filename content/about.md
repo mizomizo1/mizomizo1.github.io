@@ -12,4 +12,4 @@ mizomizo1です。
 
 技術や日々の学びを記録しています。
 
-[GitHub](https://github.com/mizomizo1)
+{{< icon-link href="https://github.com/mizomizo1" icon="bi-github" >}}GitHub{{< /icon-link >}}

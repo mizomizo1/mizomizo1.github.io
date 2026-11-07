@@ -105,7 +105,7 @@
         {{ end }}
         class="not-prose decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <h2>
-          {{ .Title | emojify }}
+          {{ .Title | emojify }} <span class="blog-card__arrow">{{ partial "icon.html" "bi-arrow-right" }}</span>
           {{ if .Params.externalUrl }}
             <span class="cursor-default align-top text-xs text-neutral-400 dark:text-neutral-500">
               <span class="rtl:hidden">&#8599;</span>

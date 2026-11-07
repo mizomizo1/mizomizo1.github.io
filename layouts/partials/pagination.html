@@ -1,0 +1,8 @@
+{{ $pager := .Paginator }}
+{{ if gt $pager.TotalPages 1 }}
+<nav class="blog-pagination" aria-label="ページ送り">
+  {{ if $pager.HasPrev }}<a class="blog-action" href="{{ $pager.Prev.URL }}" rel="prev">{{ partial "icon.html" "bi-arrow-left" }}<span>前へ</span></a>{{ else }}<span class="blog-action blog-action--disabled" aria-disabled="true">{{ partial "icon.html" "bi-arrow-left" }}<span>前へ</span></span>{{ end }}
+  <span class="blog-pagination__current" aria-current="page"><span class="sr-only">現在のページ </span>{{ $pager.PageNumber }} / {{ $pager.TotalPages }}</span>
+  {{ if $pager.HasNext }}<a class="blog-action" href="{{ $pager.Next.URL }}" rel="next"><span>次へ</span>{{ partial "icon.html" "bi-arrow-right" }}</a>{{ else }}<span class="blog-action blog-action--disabled" aria-disabled="true"><span>次へ</span>{{ partial "icon.html" "bi-arrow-right" }}</span>{{ end }}
+</nav>
+{{ end }}

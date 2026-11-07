@@ -224,3 +224,27 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 }
 .blog-back-link:hover, .blog-back-link:active { background: var(--blog-tint); }
 .blog-back-link .icon { font-size: 1.15rem; }
+
+/* Shared secondary actions across archives, taxonomy pages, and profiles. */
+.blog-action, .blog-discovery a {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  min-height: 44px; padding: .6rem .9rem;
+  border: 1px solid var(--blog-border); border-radius: .6rem;
+  background: var(--blog-surface); color: var(--blog-accent);
+  font-size: .95rem; font-weight: 700; line-height: 1.5; text-decoration: none;
+}
+.article-content a.blog-action { text-decoration: none; }
+.blog-action:hover, .blog-discovery a:hover { border-color: var(--blog-accent); background: var(--blog-tint); }
+.blog-action--disabled { color: var(--blog-muted); background: transparent; opacity: .55; }
+.blog-action--disabled:hover { border-color: var(--blog-border); background: transparent; }
+.blog-context-nav { margin-block: 1.25rem 1.75rem; }
+.blog-term-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: .75rem; margin-top: 1.5rem; }
+.blog-term-link { display: flex; align-items: center; gap: .75rem; min-height: 64px; padding: 1rem; border: 1px solid var(--blog-border); border-radius: .75rem; background: var(--blog-surface); color: var(--blog-ink); font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
+.blog-term-link > .icon, .blog-term-link__arrow { color: var(--blog-accent); flex-shrink: 0; }
+.blog-term-link__count { display: inline-flex; align-items: center; justify-content: center; min-width: 1.75rem; padding: .1rem .4rem; border-radius: 1rem; background: var(--blog-tint); color: var(--blog-accent); font-size: .8rem; }
+.blog-term-link__arrow { margin-inline-start: auto; }
+.blog-term-link:hover { border-color: var(--blog-accent); background: var(--blog-tint); }
+.blog-article-nav small { display: flex; align-items: center; gap: .5rem; }
+.blog-pagination { display: flex; justify-content: center; align-items: center; gap: .75rem; margin-top: 2rem; }
+.blog-pagination__current { color: var(--blog-muted); font-size: .9rem; white-space: nowrap; }
+.blog-card__arrow { display: inline-flex; vertical-align: middle; margin-inline-start: .4rem; color: var(--blog-accent); font-size: 1rem; }

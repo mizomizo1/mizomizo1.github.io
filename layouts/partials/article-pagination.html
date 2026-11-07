@@ -9,8 +9,8 @@
     {{ end }}
     {{ if or $older $newer }}
       <div class="blog-article-nav">
-        {{ with $older }}<a href="{{ .RelPermalink }}" rel="prev"><small>前の記事</small><strong>{{ .Title }}</strong></a>{{ end }}
-        {{ with $newer }}<a href="{{ .RelPermalink }}" rel="next"><small>次の記事</small><strong>{{ .Title }}</strong></a>{{ end }}
+        {{ with $older }}<a href="{{ .RelPermalink }}" rel="prev"><small>{{ partial "icon.html" "bi-arrow-left" }} 前の記事</small><strong>{{ .Title }}</strong></a>{{ end }}
+        {{ with $newer }}<a href="{{ .RelPermalink }}" rel="next"><small>次の記事 {{ partial "icon.html" "bi-arrow-right" }}</small><strong>{{ .Title }}</strong></a>{{ end }}
       </div>
     {{ end }}
   </nav>
