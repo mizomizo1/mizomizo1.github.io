@@ -1,6 +1,11 @@
 ---
 title: "プロフィール"
 description: "mizomizo1について"
+showDate: false
+showReadingTime: false
+showPagination: false
+showTableOfContents: false
+showAuthor: false
 ---
 
 こんにちは、mizomizo1です。
