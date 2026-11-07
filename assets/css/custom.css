@@ -1,7 +1,7 @@
 /* Site components. Palette values live in schemes/journal.css. */
 :root {
   --blog-font: "BIZ UDPGothic", "BIZ UDPゴシック", system-ui, -apple-system, "Yu Gothic", sans-serif;
-  --blog-text-leading: 1.2;
+  --blog-text-leading: 1.0;
   --blog-text-tracking: 0;
   --blog-paragraph-gap: .35em;
   --blog-reading-width: 44rem;
