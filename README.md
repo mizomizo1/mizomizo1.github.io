@@ -124,3 +124,7 @@ hugo --gc --minify
 取得元・バージョン・更新方法は `licenses/bootstrap-icons/README.md`、MITライセンス原文は同ディレクトリの `LICENSE` に保存しています。追加時も `bi-` 接頭辞を使い、テーマ側のアイコンと区別してください。
 
 サイトの横幅は `assets/css/custom.css` の `--blog-max-width`（最大1600px）、左右の余白は `--blog-gutter` で管理します。トップは `params.toml` の `homepage.layout = "hero"` でサイト独自のヒーローを表示します。本文の行幅は読みやすさのためテーマの制限を維持し、スマートフォンではヒーローの装飾を省いて1列で表示します。
+
+## フォント
+
+本文と見出しは **BIZ UDPゴシック（BIZ UDPGothic）** を使用します。`layouts/partials/extend-head.html` でGoogle Fontsの400・700ウェイトを読み込み、`assets/css/custom.css` の `--blog-font` でフォントを管理します。`display=swap` により読み込み中も代替フォントで表示します。外部フォントを取得できない場合は端末のフォントに切り替わります。コードブロックは等幅フォントを維持します。

@@ -1,5 +1,6 @@
 /* Site components. Palette values live in schemes/journal.css. */
 :root {
+  --blog-font: "BIZ UDPGothic", "BIZ UDPゴシック", system-ui, -apple-system, "Yu Gothic", sans-serif;
   --blog-max-width: 1600px;
   --blog-gutter: clamp(1.25rem, 4vw, 4rem);
   --blog-page: #f6f8fa;
@@ -28,7 +29,7 @@ body {
   padding-inline: var(--blog-gutter);
   background: var(--blog-page);
   color: var(--blog-ink);
-  font-family: system-ui, -apple-system, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-family: var(--blog-font);
 }
 body > header { border-bottom: 1px solid var(--blog-border); margin-bottom: 2.5rem; }
 body > header > .main-menu { min-height: 5rem; }
