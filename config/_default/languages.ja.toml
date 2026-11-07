@@ -10,12 +10,12 @@ title = "mizomizo.log"
   isoCode = "ja"
   rtl = false
   dateFormat = "2006年1月2日"
-  description = "mizomizo1の個人ブログです。"
+  description = "溝上秀明の個人ブログ。研究や開発で学んだことを記録しています。"
 
   [params.author]
-    name = "mizomizo1"
-    headline = "mizomizo1のブログ"
-    bio = "技術や日々の学びを記録しています。"
+    name = "溝上 秀明"
+    headline = "Hideaki Mizoue / mizomizo1"
+    bio = "関西医科大学医学部医学科。人工知能・画像分類・バイオインフォマティクス・数理最適化に関心があります。"
     links = [
       { github = "https://github.com/mizomizo1" },
     ]

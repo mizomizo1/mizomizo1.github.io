@@ -248,3 +248,27 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .blog-pagination { display: flex; justify-content: center; align-items: center; gap: .75rem; margin-top: 2rem; }
 .blog-pagination__current { color: var(--blog-muted); font-size: .9rem; white-space: nowrap; }
 .blog-card__arrow { display: inline-flex; vertical-align: middle; margin-inline-start: .4rem; color: var(--blog-accent); font-size: 1rem; }
+
+/* Profile stays in reading order; icons distinguish its sections. */
+.profile-page { max-width: 52rem; margin-inline: auto; }
+.profile-identity { padding-bottom: 1.25rem; border-bottom: 1px solid var(--blog-border); }
+.profile-identity h1 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; line-height: 1.4; }
+.profile-identity__roman { margin: .4rem 0 .75rem; color: var(--blog-muted); font-size: .95rem; line-height: 1.6; overflow-wrap: anywhere; }
+.profile-identity__affiliation { display: flex; align-items: flex-start; gap: .6rem; margin: 0; font-size: .95rem; line-height: 1.65; }
+.profile-identity__affiliation > .icon { flex-shrink: 0; color: var(--blog-accent); margin-top: .3em; }
+.profile-links { margin-top: .5rem; }
+.profile-github { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; color: var(--blog-accent); font-size: .9rem; line-height: 1.5; text-decoration: underline; text-underline-offset: .2em; }
+.profile-github .icon { font-size: 1.2rem; }
+.profile-github:hover { color: var(--blog-ink); }
+.profile-introduction { max-width: var(--blog-reading-width); margin-block: 1.25rem 1.5rem; color: var(--blog-muted); font-size: 1rem; line-height: 1.5; }
+.profile-interests { margin-block: 1.5rem 2rem; }
+.profile-interests h2 { display: flex; align-items: center; gap: .6rem; font-size: 1.15rem; font-weight: 700; margin: 0 0 .65rem; line-height: 1.5; }
+.profile-interests h2 > .icon, .profile-section-icon { color: var(--blog-accent); }
+.profile-interests ul { display: flex; flex-wrap: wrap; gap: .4rem 1rem; list-style: none; padding: 0; margin: 0; }
+.profile-interests li { font-size: .95rem; line-height: 1.5; }
+.profile-content { width: 100%; }
+.profile-content > h2:first-child { margin-top: 0; }
+.profile-section-icon { display: inline-flex; vertical-align: middle; margin-inline-end: .6rem; font-size: .8em; }
+.profile-content > ul { padding-inline-start: 1.25em; }
+.profile-content > ul > li { margin-block: .85em; }
+.profile-content li > p { margin-block: .5em; }

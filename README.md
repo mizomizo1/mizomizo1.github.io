@@ -117,7 +117,7 @@ hugo --gc --minify
 
 青緑をアクセントに、ライトとダークの両方に対応しています。色はCSS変数に集約し、画面幅に応じて余白やリンク配置を調整しています。
 
-アイコンは公式の [Bootstrap Icons](https://icons.getbootstrap.com/) **v1.13.1** のSVGを使用しています。必要な10点を `assets/icons/bi-*.svg` に保存し、閲覧時のCDNやアイコンフォントの読み込みを不要にしています。Bootstrap IconsはBootstrap本体なしで利用できるため、Blowfishの既存スタイルと組み合わせています。
+アイコンは公式の [Bootstrap Icons](https://icons.getbootstrap.com/) **v1.13.1** のSVGを使用しています。必要な12点を `assets/icons/bi-*.svg` に保存し、閲覧時のCDNやアイコンフォントの読み込みを不要にしています。Bootstrap IconsはBootstrap本体なしで利用できるため、Blowfishの既存スタイルと組み合わせています。
 
 メニューでは `pre = "bi-house"` のようにSVG名（拡張子なし）を指定します。テンプレートでは `{{ partial "icon.html" "bi-house" }}` で利用できます。アイコンは文字ラベルと組み合わせ、装飾SVGには `aria-hidden="true"` を付けています。
 
@@ -141,4 +141,6 @@ hugo --gc --minify
 
 ヘッダーは **Home / Posts / About**。検索・カテゴリー・タグ一覧へのリンクは **Posts** の上部にまとめています。配置は `layouts/partials/post-discovery.html` と `layouts/posts/list.html` で管理し、記事の分類リンクも維持しています。
 
-分類一覧・ページ送り・プロフィールのリンクもBootstrap Iconsと共通のボタン風スタイルで管理します。本文にアイコン付きリンクを置く場合は `icon-link` ショートコードを利用できます（使用例は `content/about.md`）。
+分類一覧・ページ送り・プロフィールのリンクもBootstrap Iconsと共通のボタン風スタイルで管理します。本文にアイコン付きリンクを置く場合は `icon-link` ショートコードを利用できます。
+
+プロフィールは `content/about.md` のフロントマターで名前・所属・紹介文・研究分野、本文で研究活動・論文・受賞を管理します。専用レイアウトは `layouts/_default/profile.html`、外部リンクは `languages.ja.toml` の著者リンクを参照します。
