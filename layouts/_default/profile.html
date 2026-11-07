@@ -1,0 +1,27 @@
+{{ define "main" }}
+<article class="profile-page">
+  <header class="profile-identity">
+    <div class="profile-identity__name">
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="profile-identity__roman">{{ . }}</p>{{ end }}
+      {{ with .Params.affiliation }}<p class="profile-identity__affiliation">{{ partial "icon.html" "bi-mortarboard" }}<span>{{ . }}</span></p>{{ end }}
+    </div>
+    {{ with site.Params.author.links }}
+      <nav class="profile-links" aria-label="外部プロフィール">
+        {{ range . }}{{ with .github }}
+          <a class="profile-github" href="{{ . }}" rel="me">{{ partial "icon.html" "bi-github" }}<span>GitHub</span></a>
+        {{ end }}{{ end }}
+      </nav>
+    {{ end }}
+  </header>
+  {{ with .Params.introduction }}<p class="profile-introduction">{{ . }}</p>{{ end }}
+
+    {{ with .Params.interests }}
+      <section class="profile-interests" aria-labelledby="profile-interests-title">
+        <h2 id="profile-interests-title">{{ partial "icon.html" "bi-tags" }}<span>関心のある分野</span></h2>
+        <ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+      </section>
+    {{ end }}
+    <div class="profile-content article-content prose dark:prose-invert">{{ .Content }}</div>
+</article>
+{{ end }}

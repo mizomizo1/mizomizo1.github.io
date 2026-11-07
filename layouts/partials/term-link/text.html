@@ -1,0 +1,6 @@
+{{ $icon := cond (eq .Page.Data.Plural "tags") "bi-tags" "bi-folder2" }}
+<a class="blog-term-link" href="{{ .Page.RelPermalink }}">
+  {{ partial "icon.html" $icon }}<span>{{ .Page.Title }}</span>
+  {{ if site.Params.taxonomy.showTermCount | default true }}<span class="blog-term-link__count">{{ .Count }}<span class="sr-only">件の記事</span></span>{{ end }}
+  <span class="blog-term-link__arrow">{{ partial "icon.html" "bi-arrow-right" }}</span>
+</a>

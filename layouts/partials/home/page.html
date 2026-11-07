@@ -1,0 +1,8 @@
+<section class="home-banner" aria-label="ブログ">
+  <h1 class="sr-only">{{ site.Title }}</h1>
+  {{ with resources.Get "images/home-banner.png" }}
+    {{ $wide := .Resize "1600x webp q85" }}
+    {{ $small := .Resize "800x webp q85" }}
+    <img src="{{ $wide.RelPermalink }}" srcset="{{ $small.RelPermalink }} 800w, {{ $wide.RelPermalink }} 1600w" sizes="(min-width: 1600px) 1472px, 92vw" width="{{ $wide.Width }}" height="{{ $wide.Height }}" alt="" fetchpriority="high" decoding="async">
+  {{ end }}
+</section>

@@ -1,0 +1,9 @@
+<nav class="blog-discovery" aria-label="記事を探す">
+  {{ if site.Params.enableSearch }}
+    <button type="button" id="search-button" class="blog-discovery__search" aria-haspopup="dialog" aria-controls="search-wrapper">
+      {{ partial "icon.html" "search" }}<span>記事を検索</span>
+    </button>
+  {{ end }}
+  <a href="{{ "categories/" | relLangURL }}">{{ partial "icon.html" "bi-folder2" }}<span>Categories</span></a>
+  <a href="{{ "tags/" | relLangURL }}">{{ partial "icon.html" "bi-tags" }}<span>Tags</span></a>
+</nav>
