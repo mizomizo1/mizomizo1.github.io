@@ -152,3 +152,9 @@ hugo --gc --minify
 トップのバナー原画像は `assets/images/home-banner.png` です。Hugoで800px・1600px幅のWebPを生成し、画面幅に応じて配信します。画像の高さは `custom.css` の `.home-banner img` で調整します。
 
 フォント選定の研究資料と適用範囲は [docs/typography.md](docs/typography.md) に記載しています。本文400、見出し600、強調700を使い分けます。
+
+## 検索結果の設定
+
+各ページの `title` と `description` から検索向けの情報を生成します。設定場所・表示例・記事の書き方・Google側で変わる点は [docs/seo.md](docs/seo.md) を参照してください。
+
+表記方針：ブログ全体の著者名は `mizomizo1`、実名のプロフィールはAboutに掲載します。サイト共通の著者設定は `languages.ja.toml`、実名の紹介は `content/about.md` で管理します。

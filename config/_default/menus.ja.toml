@@ -12,6 +12,7 @@
 
 [[main]]
   name = "About"
+  title = "About"
   pre = "bi-person-circle"
   pageRef = "about"
   weight = 20

@@ -8,7 +8,7 @@ interests:
   - 画像分類
   - バイオインフォマティクス
   - 数理最適化
-description: "関西医科大学医学部医学科に在籍。人工知能、画像分類、バイオインフォマティクス、数理最適化に取り組んでいます。"
+description: "溝上秀明（Hideaki Mizoue）のプロフィール。関西医科大学医学部医学科に在籍。医療画像解析、ゲノム解析、数理最適化に関する研究・開発、論文、主な受賞を紹介します。"
 showDate: false
 showReadingTime: false
 showPagination: false
