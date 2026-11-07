@@ -112,7 +112,7 @@ hugo --gc --minify
 | ライト／ダークそれぞれの色 | `custom.css` の `:root` ／ `html.dark` |
 | 使用する配色・記事カードの有効化 | `config/_default/params.toml` |
 | メニューの名前・順番・アイコン | `config/_default/menus.ja.toml` |
-| トップの紹介エリアの構造 | `layouts/partials/home/page.html` |
+| トップのヒーローセクションの構造 | `layouts/partials/home/hero.html` |
 | トップのタイトル・紹介文 | `content/_index.md` |
 
 青緑をアクセントに、ライトとダークの両方に対応しています。色はCSS変数に集約し、画面幅に応じて余白やリンク配置を調整しています。
@@ -122,3 +122,5 @@ hugo --gc --minify
 メニューでは `pre = "bi-house"` のようにSVG名（拡張子なし）を指定します。テンプレートでは `{{ partial "icon.html" "bi-house" }}` で利用できます。アイコンは文字ラベルと組み合わせ、装飾SVGには `aria-hidden="true"` を付けています。
 
 取得元・バージョン・更新方法は `licenses/bootstrap-icons/README.md`、MITライセンス原文は同ディレクトリの `LICENSE` に保存しています。追加時も `bi-` 接頭辞を使い、テーマ側のアイコンと区別してください。
+
+サイトの横幅は `assets/css/custom.css` の `--blog-max-width`（最大1600px）、左右の余白は `--blog-gutter` で管理します。トップは `params.toml` の `homepage.layout = "hero"` でサイト独自のヒーローを表示します。本文の行幅は読みやすさのためテーマの制限を維持し、スマートフォンではヒーローの装飾を省いて1列で表示します。

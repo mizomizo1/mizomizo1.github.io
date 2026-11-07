@@ -1,0 +1,16 @@
+<article class="blog-intro blog-hero">
+  <div class="blog-hero__content">
+  <div class="blog-intro__eyebrow"><span class="blog-intro__mark">{{ partial "icon.html" "bi-code-slash" }}</span> {{ site.Params.author.name }} / BLOG</div>
+  <h1>{{ .Title }}</h1>
+  <div class="blog-intro__description prose dark:prose-invert">{{ .Content }}</div>
+  <a class="blog-button" href="{{ "posts/" | relLangURL }}">記事を読む {{ partial "icon.html" "bi-arrow-right" }}</a>
+  <a class="blog-text-link" href="{{ "about/" | relLangURL }}">このブログについて {{ partial "icon.html" "bi-arrow-right" }}</a>
+  </div>
+  <div class="blog-hero__art" aria-hidden="true">
+    <div class="blog-hero__orbit blog-hero__orbit--outer"></div>
+    <div class="blog-hero__orbit blog-hero__orbit--inner"></div>
+    <span class="blog-hero__code">{{ partial "icon.html" "bi-code-slash" }}</span>
+    <span class="blog-hero__satellite blog-hero__satellite--journal">{{ partial "icon.html" "bi-journal-text" }}</span>
+    <span class="blog-hero__satellite blog-hero__satellite--tags">{{ partial "icon.html" "bi-tags" }}</span>
+  </div>
+</article>

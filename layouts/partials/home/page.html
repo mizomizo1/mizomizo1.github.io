@@ -1,7 +1,0 @@
-<article class="blog-intro">
-  <div class="blog-intro__eyebrow"><span class="blog-intro__mark">{{ partial "icon.html" "bi-code-slash" }}</span> {{ site.Params.author.name }} / BLOG</div>
-  <h1>{{ .Title }}</h1>
-  <div class="blog-intro__description prose dark:prose-invert">{{ .Content }}</div>
-  <a class="blog-button" href="{{ "posts/" | relLangURL }}">記事を読む {{ partial "icon.html" "bi-arrow-right" }}</a>
-  <a class="blog-text-link" href="{{ "about/" | relLangURL }}">このブログについて {{ partial "icon.html" "bi-arrow-right" }}</a>
-</article>
