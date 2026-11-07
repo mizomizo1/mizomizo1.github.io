@@ -1,6 +1,7 @@
 /* Site components. Palette values live in schemes/journal.css. */
 :root {
   --blog-font: "BIZ UDPGothic", "BIZ UDPゴシック", system-ui, -apple-system, "Yu Gothic", sans-serif;
+  --blog-brand-font: "Space Mono", "Courier New", monospace;
   --blog-text-leading: 1.0;
   --blog-text-tracking: 0;
   --blog-paragraph-gap: .35em;
@@ -39,7 +40,14 @@ body {
 }
 body > header { border-bottom: 1px solid var(--blog-border); margin-bottom: 2.5rem; }
 body > header > .main-menu { min-height: 5rem; }
-body > header > .main-menu > a { font-weight: 700; letter-spacing: 0; }
+body > header > .main-menu > a {
+  font-family: var(--blog-brand-font);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -.055em;
+  color: var(--blog-accent);
+}
 .main-menu a { transition: color .15s, background-color .15s; }
 .main-menu a:hover { color: var(--blog-accent); }
 .main-menu .icon { color: var(--blog-accent); }

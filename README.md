@@ -1,4 +1,4 @@
-# mizomizo1's Blog
+# mizomizo.log
 
 HugoとBlowfishで構築する日本語の個人ブログです。
 公開URL: <https://mizomizo1.github.io/>
@@ -134,3 +134,5 @@ hugo --gc --minify
 ## 画面の文言
 
 読者に必要な本文・日付・分類・操作名を優先します。技術構成や投稿方法はREADMEに記載し、画面上では繰り返しません。トップではサイト名の重複、記事では著者紹介・読了時間を省き、新着記事より先の記事がある場合だけ一覧への追加リンクを表示します。フッターのテーマ表記は `footer.showThemeAttribution` で非表示にしています。
+
+ヘッダーのブログ名 `mizomizo.log` は **Space Mono Bold（700）** を使用します。Google Fontsで読み込み、`custom.css` の `--blog-brand-font` とヘッダー用ルールで管理します。サイト名は `hugo.toml` と `languages.ja.toml` の `title` に設定しています。
