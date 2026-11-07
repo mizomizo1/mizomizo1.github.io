@@ -199,3 +199,28 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
   .blog-article-nav { grid-template-columns: minmax(0, 1fr); }
 }
 #close-search-button { min-width: 44px; min-height: 44px; }
+
+/* Discovery tools belong to the archive; global navigation stays small. */
+.blog-discovery { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.25rem; padding-block: 1rem; margin-block: .5rem 1.25rem; border-bottom: 1px solid var(--blog-border); font-size: .9rem; }
+.blog-discovery a, .blog-discovery button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 44px; line-height: 1.5; color: var(--blog-accent); }
+.blog-discovery a { text-decoration: underline; text-underline-offset: .2em; }
+.blog-discovery__search { padding: .5rem .9rem; border: 1px solid var(--blog-border); border-radius: .5rem; background: var(--blog-surface); cursor: pointer; font: inherit; }
+.blog-discovery__search:hover { border-color: var(--blog-accent); }
+
+.blog-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  min-height: 44px;
+  padding: .65rem 1rem;
+  border: 1px solid var(--blog-accent);
+  border-radius: .6rem;
+  background: var(--blog-surface);
+  color: var(--blog-accent);
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.blog-back-link:hover, .blog-back-link:active { background: var(--blog-tint); }
+.blog-back-link .icon { font-size: 1.15rem; }

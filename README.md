@@ -117,7 +117,7 @@ hugo --gc --minify
 
 青緑をアクセントに、ライトとダークの両方に対応しています。色はCSS変数に集約し、画面幅に応じて余白やリンク配置を調整しています。
 
-アイコンは公式の [Bootstrap Icons](https://icons.getbootstrap.com/) **v1.13.1** のSVGを使用しています。必要な8点を `assets/icons/bi-*.svg` に保存し、閲覧時のCDNやアイコンフォントの読み込みを不要にしています。Bootstrap IconsはBootstrap本体なしで利用できるため、Blowfishの既存スタイルと組み合わせています。
+アイコンは公式の [Bootstrap Icons](https://icons.getbootstrap.com/) **v1.13.1** のSVGを使用しています。必要な9点を `assets/icons/bi-*.svg` に保存し、閲覧時のCDNやアイコンフォントの読み込みを不要にしています。Bootstrap IconsはBootstrap本体なしで利用できるため、Blowfishの既存スタイルと組み合わせています。
 
 メニューでは `pre = "bi-house"` のようにSVG名（拡張子なし）を指定します。テンプレートでは `{{ partial "icon.html" "bi-house" }}` で利用できます。アイコンは文字ラベルと組み合わせ、装飾SVGには `aria-hidden="true"` を付けています。
 
@@ -138,3 +138,5 @@ hugo --gc --minify
 ヘッダーのブログ名 `mizomizo.log` は **Space Mono Bold（700）** を使用します。Google Fontsで読み込み、`custom.css` の `--blog-brand-font` とヘッダー用ルールで管理します。サイト名は `hugo.toml` と `languages.ja.toml` の `title` に設定しています。
 
 読者向けUIの判断と参照論文は [docs/ui-design.md](docs/ui-design.md) にまとめています。要約の行間は `--blog-summary-leading` で本文と別に管理します。
+
+ヘッダーは **Home / Posts / About**。検索・カテゴリー・タグ一覧へのリンクは **Posts** の上部にまとめています。配置は `layouts/partials/post-discovery.html` と `layouts/posts/list.html` で管理し、記事の分類リンクも維持しています。

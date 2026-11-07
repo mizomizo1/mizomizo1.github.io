@@ -15,15 +15,3 @@
   pre = "bi-person-circle"
   pageRef = "about"
   weight = 20
-
-[[main]]
-  name = "Categories"
-  pre = "bi-folder2"
-  pageRef = "categories"
-  weight = 30
-
-[[main]]
-  name = "Tags"
-  pre = "bi-tags"
-  pageRef = "tags"
-  weight = 40

@@ -1,6 +1,6 @@
 {{ if and (eq .Section "posts") (.Params.showPagination | default site.Params.article.showPagination) }}
   <nav aria-label="記事の移動">
-    <a class="blog-archive-link" href="{{ "posts/" | relLangURL }}">記事一覧に戻る</a>
+    <a class="blog-back-link" href="{{ "posts/" | relLangURL }}">{{ partial "icon.html" "bi-arrow-left" }}<span>記事一覧に戻る</span></a>
     {{ $older := .PrevInSection }}
     {{ $newer := .NextInSection }}
     {{ if .Params.invertPagination | default site.Params.article.invertPagination }}
