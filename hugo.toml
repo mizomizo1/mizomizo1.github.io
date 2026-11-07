@@ -1,0 +1,5 @@
+baseURL = "https://mizomizo1.github.io/"
+languageCode = "ja-jp"
+defaultContentLanguage = "ja"
+title = "mizomizo1's Blog"
+theme = "blowfish"
