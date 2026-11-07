@@ -1,35 +1,29 @@
 [[main]]
-  name = "ホーム"
+  name = "Home"
   pre = "bi-house"
   pageRef = "/"
   weight = 5
 
 [[main]]
-  name = "記事一覧"
+  name = "Posts"
   pre = "bi-journal-text"
   pageRef = "posts"
   weight = 10
 
 [[main]]
-  name = "プロフィール"
+  name = "About"
   pre = "bi-person-circle"
   pageRef = "about"
   weight = 20
 
 [[main]]
-  name = "カテゴリー"
+  name = "Categories"
   pre = "bi-folder2"
   pageRef = "categories"
   weight = 30
 
 [[main]]
-  name = "タグ"
+  name = "Tags"
   pre = "bi-tags"
   pageRef = "tags"
   weight = 40
-
-[[footer]]
-  name = "RSS"
-  pre = "bi-rss"
-  url = "/index.xml"
-  weight = 10

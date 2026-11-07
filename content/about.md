@@ -8,8 +8,8 @@ showTableOfContents: false
 showAuthor: false
 ---
 
-こんにちは、mizomizo1です。
+mizomizo1です。
 
-このブログでは、技術や日々の学びを記録していきます。
+技術や日々の学びを記録しています。
 
-[GitHubプロフィール](https://github.com/mizomizo1)
+[GitHub](https://github.com/mizomizo1)
