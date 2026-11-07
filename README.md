@@ -1,31 +1,44 @@
-# mizomizo1.github.io
+# mizomizo1's Blog
 
-GitHub Pagesで公開する個人サイトです。
+HugoとBlowfishで構築した日本語の個人ブログです。
 
 **公開URL:** <https://mizomizo1.github.io/>
 
-## 公開方法
+## 記事の投稿
 
-このリポジトリはビルド不要の静的サイトです。`main`ブランチのルートにあるファイルが公開対象です。
-
-初回のみ、GitHubリポジトリの **Settings → Pages → Build and deployment** で以下を設定してください。
-
-1. **Deploy from a branch** を選択
-2. ブランチを `main`、フォルダーを `/(root)` にして **Save**
-
-設定後、`main`ブランチにプッシュするとGitHub Pagesが自動で更新されます。公開には数分かかることがあります。
-
-## ローカルで確認する
-
-リポジトリのルートで次のコマンドを実行し、表示されたURLをブラウザーで開きます。
+`content/posts/` にMarkdownファイルを追加し、`main` ブランチへPushすると、GitHub ActionsがビルドしてGitHub Pagesへ公開します。
 
 ```sh
-python3 -m http.server 8000
+hugo new content posts/my-first-post.md
 ```
 
-通常は <http://localhost:8000/> で確認できます。
+作成した記事のフロントマターで `draft: false` にすると公開対象になります。ローカルで確認する場合は次を実行します。
 
-## ファイル構成
+```sh
+hugo server
+```
 
-- `index.html` — サイトのトップページ
-- `README.md` — このプロジェクトの説明と公開手順
+## ローカルビルド
+
+Hugo Extended 0.169.0とGitが必要です。サブモジュールも含めて取得し、ビルドします。
+
+```sh
+git clone --recurse-submodules https://github.com/mizomizo1/mizomizo1.github.io.git
+cd mizomizo1.github.io
+hugo --gc --minify
+```
+
+サイトは `public/` に生成されます。このディレクトリはGit管理対象外です。
+
+## GitHub Pagesの初回設定
+
+GitHubリポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定してください。以降、`main` へのPushまたはActionsからの手動実行でデプロイされます。
+
+## 構成
+
+- `config/_default/` — HugoとBlowfishのサイト設定
+- `content/` — Markdownの記事とプロフィール
+- `themes/blowfish/` — Git Submoduleで管理するBlowfishテーマ
+- `.github/workflows/hugo.yaml` — GitHub Actionsによるビルドとデプロイ
+
+Blowfish本体は変更せず、カスタマイズはサイト側の設定・コンテンツで行います。
