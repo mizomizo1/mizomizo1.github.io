@@ -128,3 +128,5 @@ hugo --gc --minify
 ## フォント
 
 本文と見出しは **BIZ UDPゴシック（BIZ UDPGothic）** を使用します。`layouts/partials/extend-head.html` でGoogle Fontsの400・700ウェイトを読み込み、`assets/css/custom.css` の `--blog-font` でフォントを管理します。`display=swap` により読み込み中も代替フォントで表示します。外部フォントを取得できない場合は端末のフォントに切り替わります。コードブロックは等幅フォントを維持します。
+
+文章の読みやすさは `custom.css` の `--blog-text-leading`（本文行間1.2倍）、`--blog-text-tracking`（字間0）、`--blog-paragraph-gap`（段落間0.35em）、`--blog-reading-width`（本文の最大幅44rem）で調整できます。本文はPCで18px、スマートフォンで16pxです。見出し・箇条書き・コードにはそれぞれの間隔を設定しています。
