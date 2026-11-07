@@ -1,4 +1,4 @@
 ---
-title: "技術と日々の記録"
+title: "mizomizo.log"
 description: "技術や日々の学びを記録する個人ブログです。"
 ---

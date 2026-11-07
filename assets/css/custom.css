@@ -1,6 +1,6 @@
 /* Site components. Palette values live in schemes/journal.css. */
 :root {
-  --blog-font: "BIZ UDPGothic", "BIZ UDPゴシック", system-ui, -apple-system, "Yu Gothic", sans-serif;
+  --blog-font: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "BIZ UDPGothic", system-ui, sans-serif;
   --blog-brand-font: "Space Mono", "Courier New", monospace;
   /* Type scale (rem): body, metadata, controls, and heading levels. */
   --blog-text-body: 1.125rem;
@@ -11,7 +11,7 @@
   --blog-text-h3: 1.25rem;
   --blog-text-h4: 1.125rem;
   --blog-text-card: clamp(1.125rem, 1.5vw, 1.25rem);
-  --blog-text-hero: clamp(1.75rem, 3.6vw, 3.25rem);
+  --blog-weight-heading: 600;
   --blog-weight-bold: 700;
   --blog-control-height: 44px;
   --blog-control-radius: .5rem;
@@ -49,7 +49,7 @@ html.dark {
   --blog-border: #304650;
   --blog-shadow: 0 8px 28px rgb(0 0 0 / 12%);
 }
-/* Base and page titles. The hero and brand are the only display-size exceptions. */
+/* Base and page titles. The brand uses its own display font. */
 body {
   width: 100%; max-width: var(--blog-max-width); padding-inline: var(--blog-gutter);
   background: var(--blog-page); color: var(--blog-ink); font-family: var(--blog-font);
@@ -57,7 +57,7 @@ body {
 }
 #main-content > header h1, #single_header h1, .profile-identity h1 {
   margin-block: 0 var(--blog-space-4); font-size: var(--blog-text-title);
-  font-weight: var(--blog-weight-bold); line-height: 1.4; letter-spacing: 0; overflow-wrap: anywhere;
+  font-weight: var(--blog-weight-heading); line-height: 1.4; letter-spacing: 0; overflow-wrap: anywhere;
 }
 body > header { border-bottom: 1px solid var(--blog-border); margin-bottom: var(--blog-space-8); }
 body > header > .main-menu { min-height: 5rem; }
@@ -86,7 +86,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   min-height: var(--blog-control-height); padding: .625rem var(--blog-space-4);
   border: 1px solid var(--blog-border); border-radius: var(--blog-control-radius);
   background: var(--blog-surface); color: var(--blog-accent); font-family: inherit;
-  font-size: var(--blog-text-ui); font-weight: var(--blog-weight-bold); line-height: 1.5;
+  font-size: var(--blog-text-ui); font-weight: var(--blog-weight-heading); line-height: 1.5;
   letter-spacing: 0; text-decoration: none; cursor: pointer;
 }
 .blog-button:hover, .blog-back-link:hover, .blog-action:hover, .blog-discovery a:hover, .blog-discovery__search:hover {
@@ -108,29 +108,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   border-bottom: 1px solid var(--blog-border);
 }
 
-/* Home hero. */
-.blog-intro { position: relative; overflow: hidden; box-shadow: var(--blog-shadow); }
-.blog-hero {
-  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: center;
-  min-height: 280px; padding: clamp(1.5rem, 3.5vw, 3rem);
-  border: 1px solid #245d66; border-radius: var(--blog-radius); color: #f0fdfa;
-  background: radial-gradient(ellipse at 85% 15%, #165c61 0%, transparent 55%), linear-gradient(120deg, #102b3a, #103f46);
-}
-.blog-hero__content { position: relative; z-index: 1; min-width: 0; }
-.blog-hero h1 { max-width: 17ch; margin: 0 0 var(--blog-space-6); font-size: var(--blog-text-hero); font-weight: var(--blog-weight-bold); line-height: 1.3; letter-spacing: -.01em; overflow-wrap: anywhere; }
-.blog-intro__description { color: #c2dce0; font-size: 1rem; line-height: 1.65; margin-bottom: var(--blog-space-6); }
-.blog-hero .blog-button { color: #103c3b; background: #99f6e4; border-color: transparent; }
-.blog-hero .blog-button:hover { background: #ccfbf1; }
-.blog-hero a:focus-visible { outline-color: #99f6e4; }
-.blog-hero__art { position: relative; width: min(100%, 220px); aspect-ratio: 1; justify-self: center; display: grid; place-items: center; }
-.blog-hero__orbit { position: absolute; border: 1px solid #99f6e433; border-radius: 50%; }
-.blog-hero__orbit--outer { inset: 0; }
-.blog-hero__orbit--inner { inset: 14%; border-style: dashed; }
-.blog-hero__code { display: grid; place-items: center; width: 48%; aspect-ratio: 1; border: 1px solid #99f6e44d; border-radius: 28%; background: linear-gradient(135deg, #ffffff18, #ffffff05); color: #99f6e4; box-shadow: 0 20px 50px #0002; transform: rotate(-8deg); }
-.blog-hero__code .icon { font-size: clamp(3rem, 6vw, 5.5rem); }
-.blog-hero__satellite { position: absolute; display: grid; place-items: center; width: 3.5rem; aspect-ratio: 1; border-radius: 1rem; border: 1px solid #99f6e455; background: #174752; color: #ccfbf1; font-size: 1.5rem; }
-.blog-hero__satellite--journal { top: 8%; right: 8%; transform: rotate(10deg); }
-.blog-hero__satellite--tags { bottom: 8%; left: 8%; transform: rotate(-10deg); }
+/* Decorative image banner; keep recent articles close to the top. */
+.home-banner { margin-bottom: var(--blog-space-6); border-radius: var(--blog-radius); overflow: hidden; background: var(--blog-tint); }
+.home-banner img { display: block; width: 100%; height: clamp(140px, 18vw, 240px); object-fit: cover; object-position: center; }
 
 /* Article previews. */
 .article-link--simple {
@@ -139,7 +119,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 }
 .article-link--simple:hover, .article-link--simple:focus-within { border-color: var(--blog-accent); }
 .article-link--simple .blog-card__body { padding: var(--blog-space-6); min-width: 0; flex: 1; }
-.article-link--simple h2 { font-size: var(--blog-text-card); font-weight: var(--blog-weight-bold); line-height: 1.5; }
+.article-link--simple h2 { font-size: var(--blog-text-card); font-weight: var(--blog-weight-heading); line-height: 1.5; }
 .article-link--simple header > a { text-underline-offset: .2em; text-decoration-thickness: 1px; }
 .article-link--simple .blog-card__meta { margin-top: var(--blog-space-2); }
 .article-link--simple .article-link__summary { color: var(--blog-muted); font-size: 1rem; line-height: var(--blog-summary-leading); margin-top: var(--blog-space-3); max-width: var(--blog-reading-width); }
@@ -151,9 +131,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 
 /* Reading typography. Compact body spacing is intentional. */
 .prose { --tw-prose-links: var(--blog-accent); }
-.article-content { min-width: 0; max-width: var(--blog-reading-width); font-size: var(--blog-text-body); line-height: var(--blog-text-leading); line-break: strict; overflow-wrap: anywhere; }
+.article-content { min-width: 0; max-width: var(--blog-reading-width); font-size: var(--blog-text-body); font-weight: 400; line-height: var(--blog-text-leading); line-break: strict; overflow-wrap: anywhere; }
 .article-content :where(p, ul, ol, blockquote, pre, table):not(:where(.not-prose, .not-prose *)) { margin-block: var(--blog-paragraph-gap); }
-.article-content :where(h2, h3, h4):not(:where(.not-prose, .not-prose *)) { line-height: 1.4; letter-spacing: 0; margin-block: 1.25em .5em; font-weight: var(--blog-weight-bold); }
+.article-content :where(h2, h3, h4):not(:where(.not-prose, .not-prose *)) { line-height: 1.4; letter-spacing: 0; margin-block: 1.25em .5em; font-weight: var(--blog-weight-heading); }
 .article-content h2 { font-size: var(--blog-text-h2); border-bottom: 1px solid var(--blog-border); padding-bottom: var(--blog-space-2); }
 .article-content h3 { font-size: var(--blog-text-h3); }
 .article-content h4 { font-size: var(--blog-text-h4); }
@@ -197,9 +177,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .profile-links { margin-top: var(--blog-space-2); }
 .profile-github .icon { font-size: 1.125rem; }
 .profile-github:hover { color: var(--blog-ink); }
-.profile-introduction { margin-block: var(--blog-space-6); color: var(--blog-muted); font-size: var(--blog-text-body); line-height: var(--blog-text-leading); }
+.profile-introduction { margin-block: var(--blog-space-6); color: var(--blog-muted); font-size: var(--blog-text-body); font-weight: 400; line-height: var(--blog-text-leading); }
 .profile-interests { margin-block: var(--blog-space-6) var(--blog-space-8); }
-.profile-interests h2 { display: flex; align-items: center; gap: var(--blog-space-2); font-size: var(--blog-text-h2); font-weight: var(--blog-weight-bold); margin: 0 0 var(--blog-space-3); line-height: 1.4; border-bottom: 1px solid var(--blog-border); padding-bottom: var(--blog-space-2); }
+.profile-interests h2 { display: flex; align-items: center; gap: var(--blog-space-2); font-size: var(--blog-text-h2); font-weight: var(--blog-weight-heading); margin: 0 0 var(--blog-space-3); line-height: 1.4; border-bottom: 1px solid var(--blog-border); padding-bottom: var(--blog-space-2); }
 .profile-interests h2 > .icon, .profile-section-icon { color: var(--blog-accent); font-size: 1.125rem; }
 .profile-interests ul { display: flex; flex-wrap: wrap; gap: var(--blog-space-2) var(--blog-space-4); list-style: none; padding: 0; margin: 0; }
 .profile-interests li { font-size: var(--blog-text-ui); line-height: 1.5; }
@@ -210,15 +190,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .profile-content > ul > li { margin-block: .75em; }
 .profile-content li > p { margin-block: .5em; }
 
-@media (max-width: 900px) {
-  .blog-hero { grid-template-columns: minmax(0, 1fr) minmax(0, .6fr); min-height: 250px; gap: var(--blog-space-4); }
-  .blog-hero__satellite { width: 2.75rem; font-size: 1.25rem; }
-}
 @media (max-width: 640px) {
   :root { --blog-text-body: 1rem; --blog-text-h3: 1.125rem; --blog-text-h4: 1rem; }
   body > header { margin-bottom: var(--blog-space-6); }
-  .blog-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; padding: var(--blog-space-6); }
-  .blog-hero__art { display: none; }
   .article-link--simple .blog-card__body { padding: var(--blog-space-4); }
   .blog-article-nav { grid-template-columns: minmax(0, 1fr); }
 }

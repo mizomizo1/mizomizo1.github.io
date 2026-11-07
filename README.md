@@ -112,7 +112,7 @@ hugo --gc --minify
 | ライト／ダークそれぞれの色 | `custom.css` の `:root` ／ `html.dark` |
 | 使用する配色・記事カードの有効化 | `config/_default/params.toml` |
 | メニューの名前・順番・アイコン | `config/_default/menus.ja.toml` |
-| トップのヒーローセクションの構造 | `layouts/partials/home/hero.html` |
+| トップの画像バナー | `layouts/partials/home/page.html` |
 | トップのタイトル・紹介文 | `content/_index.md` |
 
 青緑をアクセントに、ライトとダークの両方に対応しています。色はCSS変数に集約し、画面幅に応じて余白やリンク配置を調整しています。
@@ -123,11 +123,11 @@ hugo --gc --minify
 
 取得元・バージョン・更新方法は `licenses/bootstrap-icons/README.md`、MITライセンス原文は同ディレクトリの `LICENSE` に保存しています。追加時も `bi-` 接頭辞を使い、テーマ側のアイコンと区別してください。
 
-サイトの横幅は `assets/css/custom.css` の `--blog-max-width`（最大1600px）、左右の余白は `--blog-gutter` で管理します。トップは `params.toml` の `homepage.layout = "hero"` でサイト独自のヒーローを表示します。本文の行幅は読みやすさのためテーマの制限を維持し、スマートフォンではヒーローの装飾を省いて1列で表示します。
+サイトの横幅は `assets/css/custom.css` の `--blog-max-width`（最大1600px）、左右の余白は `--blog-gutter` で管理します。トップは `params.toml` の `homepage.layout = "page"` で画像バナーと新着記事を表示します。大きなヒーローや重複する記事一覧ボタンは置きません。本文の行幅は最大44remです。
 
 ## フォント
 
-本文と見出しは **BIZ UDPゴシック（BIZ UDPGothic）** を使用します。`layouts/partials/extend-head.html` でGoogle Fontsの400・700ウェイトを読み込み、`assets/css/custom.css` の `--blog-font` でフォントを管理します。`display=swap` により読み込み中も代替フォントで表示します。外部フォントを取得できない場合は端末のフォントに切り替わります。コードブロックは等幅フォントを維持します。
+本文と見出しは **Noto Sans JP** を使用します。`layouts/partials/extend-head.html` でGoogle Fontsの400・600・700ウェイトを読み込み、`assets/css/custom.css` の `--blog-font` でフォントを管理します。`display=swap` により読み込み中も代替フォントで表示します。外部フォントを取得できない場合は端末のフォントに切り替わります。コードブロックは等幅フォントを維持します。
 
 文章の読みやすさは `custom.css` の `--blog-text-leading`（本文行間1.3倍）、`--blog-text-tracking`（字間0）、`--blog-paragraph-gap`（段落間0.35em）、`--blog-reading-width`（本文の最大幅44rem）で調整できます。本文はPCで18px、スマートフォンで16pxです。見出し・箇条書き・コードにはそれぞれの間隔を設定しています。
 
@@ -148,3 +148,7 @@ hugo --gc --minify
 ## デザインシステム
 
 文字サイズは `custom.css` 冒頭の `--blog-text-*`、余白は `--blog-space-*` で共通管理します。ページタイトル28〜36px、本文見出し22〜24px、操作ラベル15px、補助情報14pxを基準とし、記事・一覧・分類・プロフィールで揃えています。詳細は [共通のデザイン基準](docs/ui-design.md#共通のデザイン基準) を参照してください。
+
+トップのバナー原画像は `assets/images/home-banner.png` です。Hugoで800px・1600px幅のWebPを生成し、画面幅に応じて配信します。画像の高さは `custom.css` の `.home-banner img` で調整します。
+
+フォント選定の研究資料と適用範囲は [docs/typography.md](docs/typography.md) に記載しています。本文400、見出し600、強調700を使い分けます。

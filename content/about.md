@@ -3,7 +3,6 @@ title: "溝上 秀明"
 layout: "profile"
 subtitle: "Hideaki Mizoue / mizomizo1"
 affiliation: "関西医科大学 医学部医学科"
-introduction: "医療データの解析や教育を支援するツールの開発に取り組んでいます。このブログでは、研究や開発の過程で学んだことを記録しています。"
 interests:
   - 人工知能
   - 画像分類
@@ -16,7 +15,6 @@ showPagination: false
 showTableOfContents: false
 showAuthor: false
 ---
-
 ## 研究・開発
 
 2024年から、関西医科大学の附属生命医学研究所ゲノム解析部門と数学教室で、学生アシスタント（SA）を務めています。
