@@ -1,0 +1,77 @@
+/* Site components. Palette values live in schemes/journal.css. */
+:root {
+  --blog-page: #f6f8fa;
+  --blog-surface: #ffffff;
+  --blog-ink: #172d39;
+  --blog-muted: #526574;
+  --blog-accent: #0f766e;
+  --blog-tint: #e5f5f1;
+  --blog-border: #dce6e7;
+  --blog-radius: 1rem;
+  --blog-shadow: 0 8px 28px rgb(15 45 57 / 5%);
+}
+html.dark {
+  --blog-page: #111d26;
+  --blog-surface: #192a35;
+  --blog-ink: #e9f2f6;
+  --blog-muted: #afc2ce;
+  --blog-accent: #5eead4;
+  --blog-tint: #193b3b;
+  --blog-border: #304650;
+  --blog-shadow: 0 8px 28px rgb(0 0 0 / 12%);
+}
+body {
+  background: var(--blog-page);
+  color: var(--blog-ink);
+  font-family: system-ui, -apple-system, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+body > header { border-bottom: 1px solid var(--blog-border); margin-bottom: 2.5rem; }
+body > header > .main-menu { min-height: 5rem; }
+body > header > .main-menu > a { font-weight: 750; letter-spacing: -.025em; }
+.main-menu a { transition: color .15s, background-color .15s; }
+.main-menu a:hover { color: var(--blog-accent); }
+.main-menu .icon { color: var(--blog-accent); }
+.blog-intro {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+  border: 1px solid var(--blog-border);
+  border-top: 4px solid var(--blog-accent);
+  border-radius: var(--blog-radius);
+  background: linear-gradient(115deg, var(--blog-surface) 45%, var(--blog-tint));
+  box-shadow: var(--blog-shadow);
+}
+.blog-intro__eyebrow { display: flex; align-items: center; gap: .7rem; color: var(--blog-accent); font-size: .75rem; font-weight: 750; letter-spacing: .12em; }
+.blog-intro__mark { display: inline-flex; padding: .55rem; border-radius: .65rem; background: var(--blog-tint); font-size: 1.2rem; }
+.blog-intro h1 { margin: 1.2rem 0 .75rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.3; font-weight: 800; letter-spacing: -.035em; overflow-wrap: anywhere; }
+.blog-intro__description { color: var(--blog-muted); margin-bottom: 1.75rem; }
+.blog-button, .blog-text-link { display: inline-flex; align-items: center; gap: .6rem; font-size: .9rem; font-weight: 650; text-decoration: none; }
+.blog-button { background: #0f766e; color: white; padding: .65rem 1.1rem; border-radius: .6rem; }
+.blog-button:hover { background: #115e59; }
+.blog-text-link { color: var(--blog-accent); margin: .75rem 0 .75rem 1rem; }
+.blog-text-link:hover { text-decoration: underline; text-underline-offset: .3em; }
+.article-link--simple {
+  background: var(--blog-surface);
+  border: 1px solid var(--blog-border);
+  border-radius: var(--blog-radius);
+  box-shadow: var(--blog-shadow);
+  transition: border-color .18s, box-shadow .18s;
+}
+.article-link--simple:hover { border-color: var(--blog-accent); box-shadow: 0 8px 28px rgb(15 118 110 / 10%); }
+.article-link--simple > div:nth-last-child(2) { padding: 1.5rem; }
+.article-link--simple h2 { line-height: 1.55; }
+.article-link--simple .article-link__summary { color: var(--blog-muted); font-size: .95rem; line-height: 1.85; margin-top: .75rem; }
+#main-content > section > h2 { display: flex; align-items: center; gap: .75rem; font-size: 1.35rem; margin-top: 2.5rem; margin-bottom: 1.5rem; }
+#main-content > section > h2::before { content: ""; width: .3rem; height: 1.25rem; border-radius: 1rem; background: var(--blog-accent); }
+.prose { --tw-prose-links: var(--blog-accent); }
+.prose h2 { border-bottom: 1px solid var(--blog-border); padding-bottom: .45rem; }
+.prose blockquote { border-left-color: var(--blog-accent); background: var(--blog-tint); padding: .7rem 1.2rem; border-radius: 0 .5rem .5rem 0; }
+.prose :not(pre) > code { background: var(--blog-tint); color: var(--blog-accent); border-radius: .3rem; padding: .1rem .3rem; }
+#site-footer { border-top: 1px solid var(--blog-border); margin-top: 3rem; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--blog-accent); outline-offset: 4px; }
+@media (max-width: 640px) {
+  body > header { margin-bottom: 1.5rem; }
+  .blog-text-link { margin-left: 0; display: flex; width: fit-content; }
+  .article-link--simple > div:nth-last-child(2) { padding: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) { .main-menu a, .article-link--simple { transition: none; } }

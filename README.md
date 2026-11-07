@@ -100,3 +100,25 @@ hugo --gc --minify
 生成先は `public/` です。GitHubリポジトリの **Settings → Pages → Build and deployment → Source** を **GitHub Actions** に設定してください。
 
 変更を `main` にPushすると、`.github/workflows/hugo.yaml` がビルドしGitHub Pagesに公開します。Actionsからの手動実行にも対応しています。`public/` をコミットする必要はありません。
+
+## 配色・見た目・アイコンの管理
+
+テーマ本体を変更せず、サイト側のファイルで管理しています。
+
+| 変更したいもの | 編集するファイル |
+| --- | --- |
+| テーマ全体のアクセント色（RGBの段階色） | `assets/css/schemes/journal.css` |
+| 背景・カード・文字色、角丸・余白 | `assets/css/custom.css` の変数とコンポーネント定義 |
+| ライト／ダークそれぞれの色 | `custom.css` の `:root` ／ `html.dark` |
+| 使用する配色・記事カードの有効化 | `config/_default/params.toml` |
+| メニューの名前・順番・アイコン | `config/_default/menus.ja.toml` |
+| トップの紹介エリアの構造 | `layouts/partials/home/page.html` |
+| トップのタイトル・紹介文 | `content/_index.md` |
+
+青緑をアクセントに、ライトとダークの両方に対応しています。色はCSS変数に集約し、画面幅に応じて余白やリンク配置を調整しています。
+
+アイコンは公式の [Bootstrap Icons](https://icons.getbootstrap.com/) **v1.13.1** のSVGを使用しています。必要な8点を `assets/icons/bi-*.svg` に保存し、閲覧時のCDNやアイコンフォントの読み込みを不要にしています。Bootstrap IconsはBootstrap本体なしで利用できるため、Blowfishの既存スタイルと組み合わせています。
+
+メニューでは `pre = "bi-house"` のようにSVG名（拡張子なし）を指定します。テンプレートでは `{{ partial "icon.html" "bi-house" }}` で利用できます。アイコンは文字ラベルと組み合わせ、装飾SVGには `aria-hidden="true"` を付けています。
+
+取得元・バージョン・更新方法は `licenses/bootstrap-icons/README.md`、MITライセンス原文は同ディレクトリの `LICENSE` に保存しています。追加時も `bi-` 接頭辞を使い、テーマ側のアイコンと区別してください。
